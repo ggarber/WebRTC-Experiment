@@ -28,7 +28,7 @@ chrome.runtime.onConnect.addListener(function (port) {
         
         // "ok" button is clicked; share "sourceId" with the
         // content-script which will forward it to the webpage
-        port.postMessage({
+        return port.postMessage({
             sourceId: sourceId,
             canRequestAudioTrack: !!opts.canRequestAudioTrack
         });
